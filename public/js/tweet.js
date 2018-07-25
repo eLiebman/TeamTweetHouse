@@ -1,17 +1,19 @@
+// Update the character count with every keyup event
 $('#tweet-textarea').on('keyup', () => {
   const chars = $('#tweet-textarea').val().length;
   const charsLeft = 140 - chars;
   $('#tweet-char').text(charsLeft);
 });
 
+// On submit, prepend the tweet to the page
 $('#tweet-form').on('submit', (e) => {
-  //e.preventDefault();
-
+  //Template Data
   const tweetText = $('#tweet-textarea').val();
   const myAvatar = $('#myAvatar img').attr('src');
   const myName = $('#myName').val();
   const handle = $('#handle').text();
 
+  //HTML to be added
   const newTweetHTML =
   `<li>
     <strong class="app--tweet--timestamp"> a few seconds ago </strong>
@@ -48,5 +50,4 @@ $('#tweet-form').on('submit', (e) => {
   </li>`
 
   $('.app--tweet--list').prepend(newTweetHTML);
-  //$('#tweet-textarea').val('');
 })
