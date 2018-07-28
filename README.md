@@ -17,6 +17,7 @@ Twit doesn't require the id property, but this app does.
 
 This way, all identifying information is found in config.js, and the app contains no personal information.
 
-You can use the config.js from your own project 7, but you'll have to add the id property and
-set it to your Twitter user id number. This will be used to request your user object from Twitter,
-providing important data to the template.
+If you're a Treehouse student, you can use the config.js from your own project 7, but you'll have to add the id property and
+set it to your Twitter user id number.
+
+If not, you'll have to create a developer account with Twitter, and set up your own authentication credentials.
