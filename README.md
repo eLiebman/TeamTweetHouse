@@ -5,6 +5,7 @@ This object is imported from a separate file, config.js which must be in the sam
 
 config.js will look like this:
 
+```javascript
 module.exports = {
   consumer_key,
   consumer_secret,
@@ -12,6 +13,7 @@ module.exports = {
   access_token_secret,
   id
 }
+```
 
 Twit doesn't require the id property, but this app does.
 
