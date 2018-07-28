@@ -1,7 +1,9 @@
 
 
 The Twit module used in this app requires a config object to provide authentication to Twitter's API.
-This object can be imported from a separate file, config.js, which should look like this:
+This object is imported from a separate file, config.js which must be in the same directory as app.js
+
+config.js will look like this:
 
 module.exports = {
   consumer_key,
@@ -12,6 +14,8 @@ module.exports = {
 }
 
 Twit doesn't require the id property, but this app does.
+
+This way, all identifying information is found in config.js, and the app contains no personal information.
 
 You can use the config.js from your own project 7, but you'll have to add the id property and
 set it to your Twitter user id number. This will be used to request your user object from Twitter,
