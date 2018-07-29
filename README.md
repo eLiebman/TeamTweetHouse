@@ -1,5 +1,3 @@
-
-
 The Twit module used in this app requires a config object to provide authentication to Twitter's API.
 This object is imported from a separate file, config.js which must be in the same directory as app.js
 
