@@ -8,7 +8,7 @@ module.exports = {
   consumer_key,
   consumer_secret,
   access_token,
-  access_token_secret,
+  access_token_secret
 }
 ```
 All identifying information is found in config.js, so the app contains nothing personal.
