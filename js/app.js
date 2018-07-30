@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 // All the T.get calls are here
   const user = T.get(`account/verify_credentials`);
   const friends = T.get(`friends/list`, {count: 5});
-  const tweets = T.get(`statuses/home_timeline`, {count: 5});
+  const tweets = T.get(`statuses/user_timeline`, {count: 5});
   const DMs = T.get(`/direct_messages/events/list`, {count: 50});
 
 // Promise.all waits for all promises to resolve before executing .then()
