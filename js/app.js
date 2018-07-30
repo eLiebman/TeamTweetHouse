@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
   };
 
 // All the T.get calls are here
-  const user = T.get(`users/show`, {user_id: config.id});
+  const user = T.get(`account/verify_credentials`);
   const friends = T.get(`friends/list`, {count: 5});
   const tweets = T.get(`statuses/home_timeline`, {count: 5});
   const DMs = T.get(`/direct_messages/events/list`, {count: 50});
@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
       const tweets = response[2].data;
       const DMs = response[3].data;
       // Filter messages, returning only last conversation
-      const lastConversation = filter(DMs.events, config.id);
+      const lastConversation = filter(DMs.events, user.id_str);
       const lastFiveMessages = lastConversation.messages.slice(0, 5);
       const conversationPartner_id = lastConversation.friend_id;
 
@@ -65,7 +65,7 @@ app.get('/', (req, res) => {
 
       lastFiveMessages.forEach( message => {
         const { created_timestamp, message_create } = message;
-        const isMe = message.message_create.sender_id === config.id;
+        const isMe = message.message_create.sender_id === user.id_str;
         pageData.messages.unshift({ created_timestamp, message_create, isMe });
       });
 
